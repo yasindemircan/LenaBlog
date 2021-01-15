@@ -1,0 +1,12 @@
+{
+  "name": "LenaTestApp",
+  "displayName": "LenaTestApp",
+  "expo": {
+    "name": "LenaTestApp",
+    "slug": "LenaTestApp",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
