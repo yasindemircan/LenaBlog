@@ -1,7 +1,14 @@
-export const mainReducer = (state,action) => {
+export const initialState = {
+	loading: true,
+	error: '',
+    data: []
+}
+
+
+export const mainReducer = (state=initialState,action) => {
     switch (action.type) {
 		case 'FETCH_SUCCESS':
-         //   console.log("action",action)
+         //  console.log("action",action)
 			return {
 				loading: false,
 				data: action.payload,
@@ -13,8 +20,14 @@ export const mainReducer = (state,action) => {
 				data: {},
 				error: 'Something went wrong!'
             }
-    
-         
+        case 'FETCH_SUCCESS_MORE':
+               // console.log("action",action)
+                return {
+                    ...state,
+                    loading: false,
+                    data: state.data.concat(action.payload),
+                    error: '',
+                 }
 		default:
 			return state
 	}
